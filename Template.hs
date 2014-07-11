@@ -10,4 +10,4 @@ import Test.QuickCheck.All
 {- ------------- -}
 
 main = do
-	quickCheck (fn args == expected)
+    quickCheck (fn args == expected)

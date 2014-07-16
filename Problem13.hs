@@ -24,11 +24,11 @@ data Encoding = Multiple Int Char
 
 encodeDirect :: [Char] -> [Encoding]
 encodeDirect [] = []
-encodeDirect (c:cs) = if (length list) > 1 then
+encodeDirect str@(c:cs) = if (length list) > 1 then
                         [Multiple (length list) c] ++ encodeDirect (drop (length list - 1) cs)
                       else
                         [Single c] ++ encodeDirect (drop (length list - 1) cs)
-                    where list = (takeWhile (\x -> x == c) (c:cs))
+                    where list = (takeWhile (\x -> x == c) str)
 
 
 {- ------------- -}

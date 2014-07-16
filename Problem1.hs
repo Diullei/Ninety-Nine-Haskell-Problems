@@ -22,15 +22,18 @@ myLast :: [a] -> a
 myLast [x] = x
 myLast (_:xs) = myLast xs
 
+myLast' :: [a] -> a
+myLast' = foldr1 (flip const)
+
+-- why this is not working?
+--myLast'' :: [a] -> a
+--myLast'' = read . reverse
+
 {- ------------- -}
 {- TEST CASE     -}
 {- ------------- -}
 
-myLast_test xs = myLast xs == last xs
-
-{- ------------- -}
-{- EXECUTE TESTS -}
-{- ------------- -}
-
 main = do
-    quickCheck (myLast_test [1,2,3,4])
+    quickCheck (myLast [1,2,3,4] == 4)
+    quickCheck (myLast' [1,2,3,4] == 4)
+    --quickCheck (myLast'' [1,2,3,4] == 4)

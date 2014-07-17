@@ -34,9 +34,13 @@ slice xs start end =
             else
                 takeWhile' xs start end (index + 1)
 
+slice' :: [a] -> Int -> Int -> [a]
+slice' xs start end = take (end - start + 1) $ drop (start -1) xs
 
 {- ------------- -}
 {- TEST CASE     -}
 {- ------------- -}
 
-main = quickCheck (slice ['a','b','c','d','e','f','g','h','i','k'] 3 7 == "cdefg")
+main = do
+    quickCheck (slice ['a','b','c','d','e','f','g','h','i','k'] 3 7 == "cdefg")
+    quickCheck (slice' ['a','b','c','d','e','f','g','h','i','k'] 3 7 == "cdefg")

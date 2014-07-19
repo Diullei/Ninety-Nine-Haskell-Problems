@@ -1,5 +1,5 @@
-import Test.QuickCheck
-import Test.QuickCheck.All
+import           Test.QuickCheck
+import           Test.QuickCheck.All
 
 {-
     (*) Remove the K'th element from a list.

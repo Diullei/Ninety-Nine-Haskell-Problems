@@ -1,5 +1,5 @@
-import Test.QuickCheck
-import Test.QuickCheck.All
+import           Test.QuickCheck
+import           Test.QuickCheck.All
 
 {-
     (**) Rotate a list N places to the left.

@@ -1,5 +1,5 @@
-import Test.QuickCheck
-import Test.QuickCheck.All
+import           Test.QuickCheck
+import           Test.QuickCheck.All
 
 {-
     (**) Extract a slice from a list.
